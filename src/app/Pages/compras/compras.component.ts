@@ -1,7 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule }                          from '@angular/common';
 import { FormsModule }                           from '@angular/forms';
-import { RouterLink }                            from '@angular/router';
 import { Compra, DetalleCompra }                 from '../../Models/Compra';
 import { Proveedor }                             from '../../Models/Proveedor';
 import { Producto }                              from '../../Models/Producto';
@@ -12,7 +11,7 @@ import { ProductoService }                       from '../../Services/producto.s
 @Component({
   selector:    'app-compras',
   standalone:  true,
-  imports:     [CommonModule, FormsModule, RouterLink],
+  imports:     [CommonModule, FormsModule],
   templateUrl: './compras.component.html',
   styleUrls:   ['./compras.component.css'],
 })
