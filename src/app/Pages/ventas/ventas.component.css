@@ -100,58 +100,6 @@
   border-top: 2px solid #111827;
   padding-top: 8px;
 }
-/* --- RESET BÁSICO --- */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #e6e8eb; 
-}
-
-/* --- 1. ESTRUCTURA DIVIDIDA EN DOS --- */
-.layout-principal {
-  display: flex; 
-  height: 100vh; 
-}
-
-/* --- 2. EL MENÚ LATERAL (SIDEBAR) --- */
-.sidebar {
-  width: 250px;
-  background-color: #313945; 
-  color: white;
-  display: flex;
-  flex-direction: column; 
-}
-
-/* Perfil de Usuario */
-.perfil-usuario {
-  display: flex;
-  align-items: center;
-  padding: 30px 20px;
-  gap: 15px; 
-  border-bottom: 1px solid #454d5a; 
-}
-
-/* Opciones del Menú */
-.menu {
-  padding: 20px 0;
-  display: flex;
-  flex-direction: column;
-}
-
-/* --- ESTILOS DEL MENÚ DESPLEGABLE (INVENTARIO) --- */
-.titulo-desplegable {
-  list-style: none;
-  justify-content: space-between; 
-  cursor: pointer;
-}
-
-/* --- 3. CONTENIDO DERECHO --- */
-.contenido-derecho {
-  flex: 1; 
-  padding: 30px;
-  overflow-y: auto; 
-}
 
 /* Tarjeta y Tabla */
 .tarjeta-blanca {
