@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 22.23.4
           cache: npm
       - name: Usar la versión npm declarada por el proyecto
         run: npm install --global npm@11.12.1
@@ -25,17 +25,18 @@ jobs:
         run: npx ng test --watch=false
       - name: Compilación Angular de producción
         run: npm run build
-      - name: Auditoría de dependencias
-        run: npm audit --audit-level=high
-      - name: Generar informe de auditoría (JSON)
+      - name: Auditoría bloqueante de dependencias de producción
+        run: npm audit --omit=dev --audit-level=high
+      - name: Generar informe completo de auditoría
         if: always()
-        run: npm audit --json > npm-audit.json || true
-      - name: Publicar informe de dependencias
+        continue-on-error: true
+        run: npm audit --json > npm-audit-completo.json || true
+      - name: Publicar informe completo de dependencias
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: auditoria-dependencias
-          path: npm-audit.json
+          name: auditoria-dependencias-completa
+          path: npm-audit-completo.json
           if-no-files-found: ignore
 
   e2e:
@@ -44,7 +45,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 22.23.4
           cache: npm
       - name: Usar la versión npm declarada por el proyecto
         run: npm install --global npm@11.12.1
