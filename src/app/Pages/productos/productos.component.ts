@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { CommonModule }      from '@angular/common';
 import { FormsModule }       from '@angular/forms';
-import { RouterLink }        from '@angular/router';
 import { Subject }           from 'rxjs';
 import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 import { ProductoService }   from '../../Services/producto.service';
@@ -12,7 +11,7 @@ import { Categoria }         from '../../Models/Categoria';
 @Component({
   selector:    'app-productos',
   standalone:  true,
-  imports:     [CommonModule, FormsModule, RouterLink],
+  imports:     [CommonModule, FormsModule],
   templateUrl: './productos.component.html',
   styleUrls:   ['./productos.component.css']
 })

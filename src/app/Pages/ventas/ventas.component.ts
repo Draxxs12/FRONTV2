@@ -1,7 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
 import { VentaService } from '../../Services/venta.service';
 import { AuthService } from '../../Services/auth.service';
 import { ComprobanteService } from '../../Services/comprobante.service';
@@ -10,7 +9,7 @@ import { Venta, DetalleVenta } from '../../Models/Venta';
 @Component({
   selector: 'app-ventas',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink],
+  imports: [CommonModule, FormsModule],
   templateUrl: './ventas.component.html',
   styleUrls: ['./ventas.component.css']
 })

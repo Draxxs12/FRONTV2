@@ -2,7 +2,6 @@
 
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule }          from '@angular/common';
-import { RouterLink }            from '@angular/router';
 import { NgxEchartsDirective, provideEchartsCore } from 'ngx-echarts';
 import { EChartsOption, XAXisComponentOption, SeriesOption } from 'echarts';
 import { forkJoin, of }          from 'rxjs';
@@ -19,7 +18,7 @@ import { Compra }          from '../../Models/Compra';
 @Component({
   selector:    'app-dashboard',
   standalone:  true,
-  imports:     [CommonModule, NgxEchartsDirective, RouterLink],
+  imports:     [CommonModule, NgxEchartsDirective],
   providers:   [provideEchartsCore({ echarts: () => import('echarts') })],
   templateUrl: './dashboard.component.html',
   styleUrls:   ['./dashboard.component.css']

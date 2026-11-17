@@ -3,14 +3,13 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule }                          from '@angular/common';
 import { FormsModule }                           from '@angular/forms';
-import { RouterLink }                            from '@angular/router';
 import { Cliente }                               from '../../Models/Cliente';
 import { ClienteService }                        from '../../Services/cliente.service';
 
 @Component({
   selector:    'app-clientes',
   standalone:  true,
-  imports:     [CommonModule, FormsModule, RouterLink],
+  imports:     [CommonModule, FormsModule],
   templateUrl: './clientes.component.html',
   styleUrls:   ['./clientes.component.css'],
 })

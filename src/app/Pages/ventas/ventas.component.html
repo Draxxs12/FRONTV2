@@ -83,13 +83,13 @@
 <!-- ===== MODAL DETALLE / EDITAR / ANULAR VENTA ===== -->
 <div class="modal-overlay" *ngIf="mostrarModal && ventaSeleccionada" (mousedown)="$event.target === $event.currentTarget ? cerrarModal() : null">
   <div class="modal" style="max-width:600px" (click)="$event.stopPropagation()">
-    <h3>Venta {{ ventaSeleccionada?.numeroComprobante }}</h3>
+    <h3>Venta {{ ventaSeleccionada.numeroComprobante }}</h3>
 
     <div class="detalle-meta">
-      <span><b>Cliente:</b> {{ ventaSeleccionada?.cliente?.nombre || 'Cliente General' }}</span>
-      <span><b>Fecha:</b> {{ ventaSeleccionada?.createdAt | date:'dd/MM/yyyy HH:mm' }}</span>
-      <span><b>Pago:</b> {{ ventaSeleccionada?.tipoPago }}</span>
-      <span><b>Estado:</b> <span class="badge" [ngClass]="estadoClass(ventaSeleccionada!.estado)">{{ ventaSeleccionada?.estado }}</span></span>
+      <span><b>Cliente:</b> {{ ventaSeleccionada.cliente?.nombre || 'Cliente General' }}</span>
+      <span><b>Fecha:</b> {{ ventaSeleccionada.createdAt | date:'dd/MM/yyyy HH:mm' }}</span>
+      <span><b>Pago:</b> {{ ventaSeleccionada.tipoPago }}</span>
+      <span><b>Estado:</b> <span class="badge" [ngClass]="estadoClass(ventaSeleccionada!.estado)">{{ ventaSeleccionada.estado }}</span></span>
     </div>
 
     <p *ngIf="cargandoDetalle" style="color:#64748b">Cargando detalle...</p>
@@ -106,9 +106,9 @@
       </tbody>
     </table>
 
-    <p style="text-align:right;font-weight:700">Total: S/ {{ ventaSeleccionada?.total | number:'1.2-2' }}</p>
+    <p style="text-align:right;font-weight:700">Total: S/ {{ ventaSeleccionada.total | number:'1.2-2' }}</p>
 
-    <div class="form-group" *ngIf="ventaSeleccionada?.estado === 'Completada'">
+    <div class="form-group" *ngIf="ventaSeleccionada.estado === 'Completada'">
       <label>Estado de la venta</label>
       <select class="select" [(ngModel)]="estadoEdit">
         <option value="Completada">Completada</option>
