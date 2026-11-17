@@ -3,7 +3,13 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule }          from '@angular/common';
 import { NgxEchartsDirective, provideEchartsCore } from 'ngx-echarts';
-import { EChartsOption, XAXisComponentOption, SeriesOption } from 'echarts';
+import { use } from 'echarts/core';
+import { BarChart, LineChart, PieChart } from 'echarts/charts';
+import { GridComponent, LegendComponent, TooltipComponent } from 'echarts/components';
+import { CanvasRenderer } from 'echarts/renderers';
+import type { EChartsOption, XAXisComponentOption, SeriesOption } from 'echarts';
+
+use([BarChart, LineChart, PieChart, GridComponent, LegendComponent, TooltipComponent, CanvasRenderer]);
 import { forkJoin, of }          from 'rxjs';
 import { catchError }            from 'rxjs/operators';
 
@@ -19,7 +25,7 @@ import { Compra }          from '../../Models/Compra';
   selector:    'app-dashboard',
   standalone:  true,
   imports:     [CommonModule, NgxEchartsDirective],
-  providers:   [provideEchartsCore({ echarts: () => import('echarts') })],
+  providers:   [provideEchartsCore({ echarts: () => import('echarts/core') })],
   templateUrl: './dashboard.component.html',
   styleUrls:   ['./dashboard.component.css']
 })
