@@ -1,14 +1,3 @@
-/* src/app/Pages/clientes/clientes.component.css
-   Reutiliza todos los estilos globales de productos.component.css
-   Solo agrega los específicos de clientes
-*/
-
-/* Menú ítem activo */
-.activo-menu {
-  background-color: #454d5a;
-  color: white !important;
-}
-
 /* Badge tipo documento */
 .badge-tipo {
   background: #e0f2fe;
@@ -19,9 +8,6 @@
   font-size: 0.78rem;
   font-weight: 700;
 }
-
-/* ── Copia los estilos base si no tienes globals ── */
-body { margin:0; padding:0; font-family:Arial,sans-serif; background-color:#e6e8eb; }
 
 .tarjeta-blanca { background-color:#ffffff; border-radius:12px; padding:24px; box-shadow:0 4px 15px rgba(0,0,0,0.05); }
 
