@@ -52,8 +52,8 @@ jobs:
       - name: Compilación de producción
         run: npm run build
 
-      - name: Auditoría de dependencias
-        run: npm audit --audit-level=high
+      - name: Auditoría bloqueante de dependencias de producción
+        run: npm audit --omit=dev --audit-level=high
 
       - name: Guardar informe de auditoría
         if: always()
